@@ -1,1 +1,564 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English&display=swap');
 
+:root {
+--ink: #241b12;
+--dark-ink: #382718;
+--paper: #e8d4aa;
+--paper-light: #f2e3bf;
+--gold: #9b722e;
+--gold-light: #c59b4a;
+--shadow: rgba(0, 0, 0, 0.55);
+}
+
+* {
+  box-sizing: border-box;
+  }
+
+body {
+margin: 0;
+min-height: 100vh;
+
+```
+background:
+    radial-gradient(
+        circle at center,
+        #3e3426 0%,
+        #211b15 65%,
+        #100d0a 100%
+    );
+
+color: var(--ink);
+
+font-family: "IM Fell English", Georgia, serif;
+```
+
+}
+
+/* =========================
+GAME
+========================= */
+
+#game {
+min-height: 100vh;
+
+```
+display: flex;
+justify-content: center;
+align-items: center;
+
+padding: 30px 15px;
+```
+
+}
+
+/* =========================
+SCREENS
+========================= */
+
+.screen {
+width: 100%;
+max-width: 900px;
+
+```
+animation: appear 0.8s ease;
+```
+
+}
+
+.hidden {
+display: none !important;
+}
+
+/* =========================
+START SCREEN
+========================= */
+
+#start-screen {
+text-align: center;
+}
+
+.title-card {
+padding: 70px 35px;
+
+```
+background:
+    linear-gradient(
+        rgba(232, 212, 170, 0.95),
+        rgba(210, 184, 137, 0.95)
+    );
+
+border: 8px double var(--gold);
+
+box-shadow:
+    0 25px 60px var(--shadow),
+    inset 0 0 50px rgba(90, 55, 20, 0.25);
+```
+
+}
+
+.era {
+font-family: "Cinzel", serif;
+
+```
+letter-spacing: 4px;
+
+font-size: 13px;
+
+color: #705326;
+
+margin-bottom: 30px;
+```
+
+}
+
+h1 {
+font-family: "Cinzel", serif;
+
+```
+font-size: clamp(34px, 7vw, 68px);
+
+line-height: 1.1;
+
+margin: 0;
+
+color: #352313;
+
+text-shadow:
+    1px 1px 0 #f5dfae;
+```
+
+}
+
+.subtitle {
+font-size: 21px;
+
+```
+margin-top: 30px;
+
+color: #5b4326;
+```
+
+}
+
+/* =========================
+BUTTONS
+========================= */
+
+button {
+font-family: "Cinzel", serif;
+
+```
+cursor: pointer;
+
+border: 2px solid var(--gold);
+
+background: #c9a25d;
+
+color: #24190e;
+
+padding: 13px 22px;
+
+font-size: 15px;
+
+transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+```
+
+}
+
+button:hover:not(:disabled) {
+transform: translateY(-2px);
+
+```
+background: #d9b873;
+
+box-shadow:
+    0 6px 15px rgba(0, 0, 0, 0.3);
+```
+
+}
+
+button:disabled {
+opacity: 0.45;
+
+```
+cursor: not-allowed;
+```
+
+}
+
+/* =========================
+STORY CARDS
+========================= */
+
+.story-card {
+position: relative;
+
+```
+padding: 45px;
+
+background:
+    linear-gradient(
+        135deg,
+        rgba(242, 227, 191, 0.98),
+        rgba(218, 190, 143, 0.98)
+    );
+
+border: 5px double var(--gold);
+
+box-shadow:
+    0 25px 60px var(--shadow),
+    inset 0 0 45px rgba(100, 60, 20, 0.18);
+```
+
+}
+
+/* decorative corners */
+
+.story-card::before,
+.story-card::after {
+content: "✦";
+
+```
+position: absolute;
+
+color: var(--gold);
+
+font-size: 28px;
+```
+
+}
+
+.story-card::before {
+top: 12px;
+left: 18px;
+}
+
+.story-card::after {
+bottom: 12px;
+right: 18px;
+}
+
+/* =========================
+HEADINGS
+========================= */
+
+h2 {
+font-family: "Cinzel", serif;
+
+```
+font-size: 32px;
+
+margin-top: 5px;
+
+color: #382414;
+```
+
+}
+
+h3 {
+font-family: "Cinzel", serif;
+
+```
+margin-top: 30px;
+```
+
+}
+
+/* =========================
+CHAPTER
+========================= */
+
+.chapter {
+font-family: "Cinzel", serif;
+
+```
+letter-spacing: 3px;
+
+font-size: 13px;
+
+color: #80602e;
+```
+
+}
+
+/* =========================
+ELEMENT SELECTION
+========================= */
+
+#element-list {
+display: grid;
+
+```
+grid-template-columns:
+    repeat(auto-fit, minmax(200px, 1fr));
+
+gap: 12px;
+
+margin: 30px 0;
+```
+
+}
+
+.element-button {
+min-height: 120px;
+
+```
+display: flex;
+
+flex-direction: column;
+
+align-items: center;
+
+justify-content: center;
+
+gap: 5px;
+
+background: rgba(255, 244, 215, 0.45);
+```
+
+}
+
+.element-button strong {
+font-size: 18px;
+}
+
+.element-button span {
+font-family: "IM Fell English", serif;
+
+```
+font-size: 14px;
+
+color: #654c2c;
+```
+
+}
+
+.element-button.selected {
+background: #c49b55;
+
+```
+border-color: #604215;
+
+transform: scale(1.02);
+
+box-shadow:
+    0 0 0 3px rgba(125, 88, 35, 0.25);
+```
+
+}
+
+/* =========================
+CHARACTER CREATOR
+========================= */
+
+#character-name {
+width: 100%;
+
+```
+padding: 14px;
+
+margin-top: 8px;
+
+font-family: "IM Fell English", serif;
+
+font-size: 18px;
+
+background: rgba(255, 248, 225, 0.7);
+
+border: 2px solid var(--gold);
+
+color: var(--ink);
+
+outline: none;
+```
+
+}
+
+#character-name:focus {
+border-color: #604215;
+}
+
+.character-options {
+display: grid;
+
+```
+grid-template-columns:
+    repeat(auto-fit, minmax(130px, 1fr));
+
+gap: 12px;
+
+margin-top: 15px;
+```
+
+}
+
+.skin-button {
+min-height: 110px;
+
+```
+display: flex;
+
+flex-direction: column;
+
+align-items: center;
+
+justify-content: center;
+
+gap: 8px;
+
+font-size: 40px;
+
+background: rgba(255, 244, 215, 0.5);
+```
+
+}
+
+.skin-button span {
+font-size: 13px;
+}
+
+.skin-button.selected {
+background: #c49b55;
+
+```
+border-color: #604215;
+```
+
+}
+
+#character-preview {
+text-align: center;
+
+```
+font-size: 90px;
+
+padding: 25px;
+```
+
+}
+
+/* =========================
+STORY
+========================= */
+
+.story-header {
+display: flex;
+
+```
+justify-content: space-between;
+
+flex-wrap: wrap;
+
+gap: 10px;
+
+border-bottom: 1px solid var(--gold);
+
+padding-bottom: 12px;
+
+margin-bottom: 20px;
+
+font-family: "Cinzel", serif;
+
+font-size: 13px;
+
+letter-spacing: 1px;
+```
+
+}
+
+#story-character {
+text-align: center;
+
+```
+font-size: 75px;
+
+margin: 10px;
+```
+
+}
+
+#story-text {
+font-size: 20px;
+
+```
+line-height: 1.75;
+
+white-space: pre-line;
+
+margin: 25px 0;
+```
+
+}
+
+#story-choices {
+display: grid;
+
+```
+gap: 12px;
+```
+
+}
+
+#story-choices button {
+text-align: left;
+
+```
+padding: 17px;
+```
+
+}
+
+/* =========================
+ANIMATION
+========================= */
+
+@keyframes appear {
+from {
+opacity: 0;
+
+```
+    transform: translateY(15px);
+}
+
+to {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+```
+
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+```
+#game {
+    padding: 10px;
+}
+
+.title-card,
+.story-card {
+    padding: 25px 18px;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 26px;
+}
+
+#story-text {
+    font-size: 18px;
+}
+```
+
+}
