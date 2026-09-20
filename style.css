@@ -559,6 +559,35 @@ h2 {
 #story-text {
     font-size: 18px;
 }
-```
+  
+  html,
+body {
+width: 100%;
+min-height: 100%;
+}
+
+body {
+overflow-x: hidden;
+}
+
+#game {
+width: 100%;
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+#start-screen {
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.title-card {
+width: min(900px, 100%);
+margin: 0 auto;
+}
 
 }
