@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,14 +9,18 @@
 
 <body>
 
-```
 <main id="game">
 
+    <!-- START SCREEN -->
     <section id="start-screen" class="screen">
         <div class="title-card">
+
             <p class="era">THE YEAR OF OUR LORD 1756</p>
 
-            <h1>The Quest of the<br>Legendary Elementalist</h1>
+            <h1>
+                The Quest of the<br>
+                Legendary Elementalist
+            </h1>
 
             <p class="subtitle">
                 A tale of elements, choices and forgotten kingdoms
@@ -26,10 +29,12 @@
             <button id="begin-button">
                 Begin Your Journey
             </button>
+
         </div>
     </section>
 
 
+    <!-- ELEMENT SCREEN -->
     <section id="element-screen" class="screen hidden">
 
         <div class="story-card">
@@ -66,5 +71,136 @@
                 <button class="element-button" data-element="plant">
                     🌿
                     <strong>Plant</strong>
-                    <span>The power of
-```
+                    <span>The power of nature and life.</span>
+                </button>
+
+                <button class="element-button" data-element="earth">
+                    🪨
+                    <strong>Earth</strong>
+                    <span>The power of stone and endurance.</span>
+                </button>
+
+                <button class="element-button" data-element="lightning">
+                    ⚡
+                    <strong>Lightning</strong>
+                    <span>The power of storms and speed.</span>
+                </button>
+
+                <button class="element-button" data-element="air">
+                    💨
+                    <strong>Air</strong>
+                    <span>The power of freedom and movement.</span>
+                </button>
+
+                <button class="element-button" data-element="water">
+                    🌊
+                    <strong>Water</strong>
+                    <span>The power of rivers and change.</span>
+                </button>
+
+            </div>
+
+            <button id="confirm-element" disabled>
+                Choose this element
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- CHARACTER CREATION -->
+    <section id="character-screen" class="screen hidden">
+
+        <div class="story-card">
+
+            <p class="chapter">YOUR CHARACTER</p>
+
+            <h2>Create Your Elementalist</h2>
+
+            <label for="character-name">
+                Your name
+            </label>
+
+            <input
+                type="text"
+                id="character-name"
+                maxlength="20"
+                placeholder="Enter your name"
+            >
+
+            <h3>Choose your appearance</h3>
+
+            <div class="character-options">
+
+                <button class="skin-button" data-skin="🧙">
+                    🧙
+                    <span>Scholar</span>
+                </button>
+
+                <button class="skin-button" data-skin="🧝">
+                    🧝
+                    <span>Forest Wanderer</span>
+                </button>
+
+                <button class="skin-button" data-skin="🧑‍🎤">
+                    🧑‍🎤
+                    <span>Adventurer</span>
+                </button>
+
+                <button class="skin-button" data-skin="👑">
+                    👑
+                    <span>Royal Traveler</span>
+                </button>
+
+            </div>
+
+            <div id="character-preview">
+                🧙
+            </div>
+
+            <button id="start-story">
+                Enter the Kingdom
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- STORY SCREEN -->
+    <section id="story-screen" class="screen hidden">
+
+        <div class="story-card">
+
+            <div class="story-header">
+                <span id="current-element"></span>
+                <span id="current-chapter">Chapter I</span>
+            </div>
+
+            <div id="story-character">
+                🧙
+            </div>
+
+            <h2 id="story-title">
+                The Beginning
+            </h2>
+
+            <div id="story-text">
+                Your story is about to begin...
+            </div>
+
+            <div id="story-choices"></div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- JAVASCRIPT -->
+<script src="game.js"></script>
+
+</body>
+</html>
